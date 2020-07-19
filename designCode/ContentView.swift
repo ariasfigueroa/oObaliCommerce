@@ -9,32 +9,42 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var show = false
+    
     var body: some View {
         ZStack {
-            
             HeaderView()
+                .blur(radius: show ? 20 : 0)
+                .animation(.default)
             BackCardView()
-                .background(Color("card4"))
+                .background(show ? Color("card3") : Color("card4"))
                 .cornerRadius(20)
                 .shadow(radius: 20)
-                .offset(x:0, y: -40)
+                .offset(x:0, y: show ? -400 : -40)
                 .scaleEffect(0.90)
-                .rotationEffect(.degrees(10))
+                .rotationEffect(show ? .degrees(0) : .degrees(10))
                 .rotation3DEffect(.degrees(5), axis: (x:10.0, y: 0, z:0))
                 .blendMode(.hardLight)
-            
+                .animation(.easeInOut(duration: 0.5))
             BackCardView()
-                .background(Color("card3"))
+                .background(show ? Color("card4") : Color("card3"))
                 .cornerRadius(20)
                 .shadow(radius: 20)
-                .offset(x:0, y: -20)
+                .offset(x:0, y: show ? -200 : -20)
                 .scaleEffect(0.95)
-                .rotationEffect(.degrees(5))
+                .rotationEffect(show ? .degrees(0) : .degrees(5))
                 .rotation3DEffect(.degrees(5), axis: (x:10.0, y: 0, z:0))
                 .blendMode(.hardLight)
+                .animation(.easeInOut(duration: 0.3))
             CardView()
-            .blendMode(.hardLight)
+                .blendMode(.hardLight)
+                .onTapGesture {
+                    self.show.toggle()
+                }
             BottomCardView()
+                .blur(radius: show ? 20 : 0)
+                .animation(.default)
             
         }
         
@@ -81,7 +91,7 @@ struct BackCardView: View {
         VStack {
             Spacer()
         }
-        .frame(width: 340, height: 220)
+        .frame(width: 320, height: 220)
     }
 }
 
