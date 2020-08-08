@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let header = HeaderModel(title: "Hola", avatarImageString: "placeholder")
+    let header = HeaderModel(title: "Hola", avatarImageString: "placeHolder")
     
     var body: some View {
         

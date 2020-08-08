@@ -22,7 +22,7 @@ class HeaderHelper: ObservableObject{
     
     func updateHeader (){
         if self.placeholder {
-            self.header = HeaderModel(title: "HOLA", avatarImageString: "placeholder")
+            self.header = HeaderModel(title: "HOLA", avatarImageString: "placeHolder")
          } else {
              self.header = HeaderModel(title: "HOLA ALDO", avatarImageString: "Avatar")
         }

@@ -38,7 +38,7 @@ struct HeaderComponentView: View {
 
 struct HeaderComponentView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderComponentView(header: HeaderModel(title: "Hola", avatarImageString: "placeholder"))
+        HeaderComponentView(header: HeaderModel(title: "Hola", avatarImageString: "placeHolder"))
     }
 }
 
