@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-class User: ObservableObject{
+struct User: Identifiable, Decodable{
     
-    @Published var trigger: Bool
+    var id = UUID()
     var userName: String
     var firstName: String
     var middleName: String
@@ -19,15 +19,4 @@ class User: ObservableObject{
     var avatar: String
     var enabled: Bool
     
-    init (userName: String, firstName: String, middleName: String, lastName: String, motherLastName: String, enabled: Bool, avatar: String){
-        self.firstName = firstName
-        self.userName = userName
-        self.middleName = middleName
-        self.lastName = lastName
-        self.motherLastName = motherLastName
-        self.enabled = enabled
-        self.avatar = avatar
-        self.trigger = true
-    }
-    
-}
+ }

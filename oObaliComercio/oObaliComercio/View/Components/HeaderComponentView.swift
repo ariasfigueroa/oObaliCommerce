@@ -9,21 +9,22 @@
 import SwiftUI
 
 struct HeaderComponentView: View {
-      @ObservedObject var headerHelper: HeaderHelper
+      @ObservedObject var headerViewModel: HeaderViewModel
       
-      init (header: HeaderModel){
-        self.headerHelper = HeaderHelper(placeholder: true)
+      init (userName: String){
+        self.headerViewModel = HeaderViewModel(userName: userName)
+        self.headerViewModel.fetchUser(userName: userName)
       }
       
       var body: some View {
           HStack() {
-            Text("\(self.headerHelper.header.title)")
+            Text("Hola \(self.headerViewModel.user.firstName)")
                   .font(.system(size: 28, weight: .bold))
               Spacer()
             Button(action: {
-                self.headerHelper.updateHeader()
+                
             }){
-                Image(self.headerHelper.header.avatarImageString)
+                Image(self.headerViewModel.user.avatar)
                       .renderingMode(.original)
                       .resizable()
                       .frame(width: 36, height: 36)
@@ -38,7 +39,7 @@ struct HeaderComponentView: View {
 
 struct HeaderComponentView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderComponentView(header: HeaderModel(title: "Hola", avatarImageString: "placeHolder"))
+        HeaderComponentView(userName: "ariasfigueroa")
     }
 }
 

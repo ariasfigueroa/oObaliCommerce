@@ -19,6 +19,8 @@
 		64B9BF5024DE57F40093BDA6 /* HeaderComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9BF4F24DE57F40093BDA6 /* HeaderComponentView.swift */; };
 		64B9BF5224DE5B580093BDA6 /* HeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9BF5124DE5B580093BDA6 /* HeaderModel.swift */; };
 		64B9BF5524DE5D740093BDA6 /* HeaderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B9BF5424DE5D740093BDA6 /* HeaderHelper.swift */; };
+		64C32B5B24DEC16200096338 /* HeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C32B5A24DEC16200096338 /* HeaderViewModel.swift */; };
+		64C32B5D24DEC74300096338 /* PreferencesMenuComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C32B5C24DEC74300096338 /* PreferencesMenuComponentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		64B9BF4F24DE57F40093BDA6 /* HeaderComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderComponentView.swift; sourceTree = "<group>"; };
 		64B9BF5124DE5B580093BDA6 /* HeaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderModel.swift; sourceTree = "<group>"; };
 		64B9BF5424DE5D740093BDA6 /* HeaderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderHelper.swift; sourceTree = "<group>"; };
+		64C32B5A24DEC16200096338 /* HeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModel.swift; sourceTree = "<group>"; };
+		64C32B5C24DEC74300096338 /* PreferencesMenuComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesMenuComponentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 		645AAB2A24D765B300177E26 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				64C32B5A24DEC16200096338 /* HeaderViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				64B9BF4F24DE57F40093BDA6 /* HeaderComponentView.swift */,
+				64C32B5C24DEC74300096338 /* PreferencesMenuComponentView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -319,11 +325,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64C32B5D24DEC74300096338 /* PreferencesMenuComponentView.swift in Sources */,
 				645AAAF924D747B300177E26 /* AppDelegate.swift in Sources */,
 				64B9BF5024DE57F40093BDA6 /* HeaderComponentView.swift in Sources */,
 				645AAAFB24D747B300177E26 /* SceneDelegate.swift in Sources */,
 				64726B3924DBA40100C37572 /* UserModel.swift in Sources */,
 				64B9BF5524DE5D740093BDA6 /* HeaderHelper.swift in Sources */,
+				64C32B5B24DEC16200096338 /* HeaderViewModel.swift in Sources */,
 				64B9BF5224DE5B580093BDA6 /* HeaderModel.swift in Sources */,
 				645AAAFD24D747B300177E26 /* ContentView.swift in Sources */,
 			);
