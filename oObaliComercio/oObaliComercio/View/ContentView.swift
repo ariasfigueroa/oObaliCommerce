@@ -9,8 +9,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let header = HeaderModel(title: "Hola", avatarImageString: "placeholder")
+    
     var body: some View {
-        Text("Hello, World...")
+        
+        VStack {
+            HeaderComponentView(header: header)
+            Spacer()
+        }
     }
 }
 
@@ -19,3 +26,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
