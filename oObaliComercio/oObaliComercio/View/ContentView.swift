@@ -20,6 +20,8 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
+            Color(#colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1))
+            .edgesIgnoringSafeArea(.all)
             HomeView(showPrefecencesMenu: self.$showPrefecencesMenu, title: self.userHeader.user.firstName, avatar: self.userHeader.user.avatar)
             PreferencesMenuComponentView(title: self.userHeader.user.firstName, avatar: self.userHeader.user.avatar)
                 .background(Color.black.opacity(0.001))
