@@ -10,12 +10,24 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @ObservedObject var userHeader : HeaderViewModel
+    @State var showPrefecencesMenu: Bool = false
+       
+       init(){
+           self.userHeader = HeaderViewModel(userName: "ariasfigueroa")
+           self.userHeader.fetchUser(userName: "ariasfigueroa")
+       }
+
     var body: some View {
-        
-        VStack {
-            HeaderComponentView(userName: "ariasfigueroa")
-            Spacer()
-            PreferencesMenuComponentView(title: "Aldo E. Arias", avatar: "Avatar")
+        ZStack {
+            HomeView(showPrefecencesMenu: self.$showPrefecencesMenu, title: self.userHeader.user.firstName, avatar: self.userHeader.user.avatar)
+            PreferencesMenuComponentView(title: self.userHeader.user.firstName, avatar: self.userHeader.user.avatar)
+                .background(Color.black.opacity(0.001))
+                .offset(y: self.showPrefecencesMenu ? 0 : screen.height)
+                .animation(.spring(response: 0.5, dampingFraction: 0.60, blendDuration: 0))
+                .onTapGesture {
+                    self.showPrefecencesMenu.toggle()
+            }
         }
     }
 }
@@ -26,3 +38,4 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+let screen = UIScreen.main.bounds

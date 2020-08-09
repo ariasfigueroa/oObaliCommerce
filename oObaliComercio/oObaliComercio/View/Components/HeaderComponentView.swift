@@ -9,27 +9,23 @@
 import SwiftUI
 
 struct HeaderComponentView: View {
-      @ObservedObject var headerViewModel: HeaderViewModel
-      
-      init (userName: String){
-        self.headerViewModel = HeaderViewModel(userName: userName)
-        self.headerViewModel.fetchUser(userName: userName)
-      }
-      
+    
+    var title: String
+    var avatar: String
+    @Binding var showProfile: Bool
+
       var body: some View {
           HStack() {
-            Text("Hola \(self.headerViewModel.user.firstName)")
+            Text("\(self.title)")
                   .font(.system(size: 28, weight: .bold))
               Spacer()
-            Button(action: {
-                
-            }){
-                Image(self.headerViewModel.user.avatar)
-                      .renderingMode(.original)
-                      .resizable()
-                      .frame(width: 36, height: 36)
-                      .clipShape(Circle())
-              }
+            Button(action: {self.showProfile.toggle()}) {
+                Image(self.avatar)
+                    .renderingMode(.original)
+                    .resizable()
+                    .frame(width: 36, height: 36)
+                    .clipShape(Circle())
+            }
           }
           .padding(.horizontal)
           .padding(.leading)
@@ -39,7 +35,7 @@ struct HeaderComponentView: View {
 
 struct HeaderComponentView_Previews: PreviewProvider {
     static var previews: some View {
-        HeaderComponentView(userName: "ariasfigueroa")
+        HeaderComponentView(title: "Hola Aldo", avatar: "placeHolder", showProfile: .constant(false))
     }
 }
 
